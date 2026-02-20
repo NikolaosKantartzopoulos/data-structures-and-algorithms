@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.guava
+
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.17'
+}
+
+testing {
+    suites {
+        test {
+            useSpock('2.3-groovy-3.0')
+        }
+    }
+}

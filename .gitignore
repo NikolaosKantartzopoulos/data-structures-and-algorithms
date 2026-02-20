@@ -1,0 +1,36 @@
+# --- Java / Gradle ---
+.gradle/
+build/
+bin/
+out/
+.gradletasknamecache
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iws
+*.iml
+*.ipr
+# If you want to share project-level run configurations, comment the next line:
+.idea/runConfigurations/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+venv/
+ENV/
+.pytest_cache/
+
+# --- JavaScript / Node ---
+node_modules/
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- Operating System ---
+.DS_Store
+Thumbs.db
+desktop.ini
