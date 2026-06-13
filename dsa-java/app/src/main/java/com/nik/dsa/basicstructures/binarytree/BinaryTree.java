@@ -2,6 +2,7 @@ package com.nik.dsa.basicstructures.binarytree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Stage 1 — General binary tree algorithms (LeetCode Solution style).
@@ -33,7 +34,26 @@ public class BinaryTree {
      * Same result as the recursive version.
      */
     public List<Integer> inorderTraversalIterative(TreeNode root) {
-        throw new UnsupportedOperationException("Implement inorderTraversalIterative");
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+
+        while (current != null || !stack.isEmpty()) {
+            // 1. Travel down to the leftmost node of the current subtree
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+
+            // 2. Current is now null, so we pop from the stack
+            current = stack.pop();
+            result.add(current.val); // Add the node value
+
+            // 3. We have visited the left and the root, now move to the right child
+            current = current.right;
+        }
+
+        return result;
     }
 
     /**
